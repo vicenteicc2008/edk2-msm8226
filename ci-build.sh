@@ -10,3 +10,4 @@ cd "$curdir"
 git submodule init
 chmod +x ./scripts/firstrun.sh && ./scripts/firstrun.sh
 chmod +x ./scripts/s3neo.sh && ./scripts/s3neo.sh
+chmod +x ./scripts/s5mini.sh && ./scripts/s5mini.sh
