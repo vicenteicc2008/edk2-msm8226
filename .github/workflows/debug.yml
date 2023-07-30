@@ -20,3 +20,7 @@ jobs:
       with:
         name: S3 neo
         path: ./workspace/zImage
+    - uses: actions/upload-artifact@v3
+      with:
+        name: S5 mini
+        path: ./workspace/zImage-s5mini
