@@ -7,4 +7,5 @@ GCC5_ARM_PREFIX=arm-linux-gnueabi- build -j$(nproc) -s -n 0 -a ARM -t GCC5 -b DE
 ./scripts/build_bootshim.sh
 cat BootShim/BootShim.bin workspace/Build/MSM8909Pkg/DEBUG_GCC5/FV/MSM8909PKG_UEFI.fd > workspace/bootpayload.bin
 gzip -c < workspace/bootpayload.bin > workspace/zImage-s5mini
-cat workspace/zImage device_specific/kmini3g.dtb > workspace/boot.img
+cat workspace/zImage device_specific/kmini3g.dtb > workspace/zImage-s5mini
+./scripts/mkbootimg --kernel=workspace/zImage-s5mini --output=workspace/boot.img --cmdline="EDK2" --base=0x80000000
