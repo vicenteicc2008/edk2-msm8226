@@ -28,3 +28,7 @@ jobs:
       with:
         name: S5 mini boot image
         path: ./workspace/boot.img
+    - uses: actions/upload-artifact@v3
+      with:
+        name: S5 mini fd image
+        path: ./workspace/Build/MSM8909Pkg/DEBUG_GCC5/FV/MSM8909PKG_UEFI.fd
