@@ -29,24 +29,6 @@ VOID EFIAPI ProcessLibraryConstructorList(VOID);
 
 STATIC VOID UartInit(VOID)
 {
-  /* Clear screen at new FB address */ 
-  UINT8 *base = (UINT8 *)0x00400000ull;
-  for (UINTN i = 0; i < 0x00800000; i++) {
-    base[i] = 0;
-  }
-
-/*Change screen format to 32BPP BGRA for Windows*/
-  MmioWrite32(0xFD901E00 + 0x30, 0x000236FF);
-  MmioWrite32(0xFD901E00 + 0x34, 0x03020001);
-  MmioWrite32(0xFD901E00 + 0x24, 720*4);
-  MmioWrite32(0xFD900600 + 0x18, (1 << (3)));
-  
-/* Move from old FB to the Windows Mobile platform one, so it fits with the UEFIplat */
-  MmioWrite32(0xFD901E14,0x00400000);
-  MmioWrite32(0xfd900618,0x00000001);
-  MmioWrite32(0xfd900718,0x00000001); 
-
-
   SerialPortInitialize();
 
   DEBUG((EFI_D_INFO, "\nTianoCore on MSM8226 (ARM)\n"));
@@ -73,8 +55,22 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize)
   /* Enable program flow prediction, if supported */
   ArmEnableBranchPrediction();
 
-  // Initialize (fake) UART.
-  UartInit();
+  /* Clear screen at new FB address */ 
+  UINT8 *base = (UINT8 *)0x00400000ull;
+  for (UINTN i = 0; i < 0x00800000; i++) {
+    base[i] = 0;
+  }
+
+/*Change screen format to 32BPP BGRA for Windows*/
+  MmioWrite32(0xFD901E00 + 0x30, 0x000236FF);
+  MmioWrite32(0xFD901E00 + 0x34, 0x03020001);
+  MmioWrite32(0xFD901E00 + 0x24, 720*4);
+  MmioWrite32(0xFD900600 + 0x18, (1 << (3)));
+  
+/* Move from old FB to the Windows Mobile platform one, so it fits with the UEFIplat */
+  MmioWrite32(0xFD901E14,0x00400000);
+  MmioWrite32(0xfd900618,0x00000001);
+  MmioWrite32(0xfd900718,0x00000001); 
 
   // Declare UEFI region
   MemoryBase     = FixedPcdGet32(PcdSystemMemoryBase);
@@ -155,5 +151,6 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize)
 
 VOID CEntryPoint(IN VOID *StackBase, IN UINTN StackSize)
 {
+  UartInit();
   Main(StackBase, StackSize);
 }
