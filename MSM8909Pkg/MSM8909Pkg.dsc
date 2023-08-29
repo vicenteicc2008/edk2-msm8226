@@ -244,8 +244,8 @@
   gEmbeddedTokenSpaceGuid.PcdAndroidFastbootUsbProductId|0xd00d
 
   # SMEM
-  gQcomTokenSpaceGuid.PcdMsmSharedBase|0x06A00000
-  gQcomTokenSpaceGuid.PcdMsmSharedSize|0x00200000
+  gQcomTokenSpaceGuid.PcdMsmSharedBase|0x0FA00000
+  gQcomTokenSpaceGuid.PcdMsmSharedSize|0x00100000
 
   #
   # Make VariableRuntimeDxe work at emulated non-volatile variable mode.
