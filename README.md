@@ -35,3 +35,4 @@ Then fastboot boot uefi.img from lk2nd.
 # Credits
 
 SimpleFbDxe screen driver is from imbushuo's [Lumia950XLPkg](https://github.com/WOA-Project/Lumia950XLPkg).
+SmemDxe driver is from Dominduchami's [Lumia830Pkg](https://github.com/Dominduchami/Lumia830Pkg).
