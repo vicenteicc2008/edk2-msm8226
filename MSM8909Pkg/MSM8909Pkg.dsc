@@ -107,6 +107,7 @@
 
   # SoC Drivers
   QcomPlatformClockInitLib|MSM8909Pkg/Library/QcomPlatformClockInitLib/QcomPlatformClockInitLib.inf
+  SmemLib|MSM8909Pkg/Driver/SmemDxe/SmemImplLib.inf
 
 [LibraryClasses.common.SEC]
   PrePiLib|EmbeddedPkg/Library/PrePiLib/PrePiLib.inf
@@ -114,6 +115,7 @@
   HobLib|EmbeddedPkg/Library/PrePiHobLib/PrePiHobLib.inf
   MemoryAllocationLib|EmbeddedPkg/Library/PrePiMemoryAllocationLib/PrePiMemoryAllocationLib.inf
   PrePiHobListPointerLib|ArmPlatformPkg/Library/PrePiHobListPointerLib/PrePiHobListPointerLib.inf
+  SmemLib|MSM8909Pkg/Driver/SmemDxe/SmemImplLib.inf
 
   # SoC Drivers
   GpioTlmmLib|MSM8909Pkg/Drivers/GpioTlmmDxe/GpioTlmmImplLib.inf
@@ -129,6 +131,7 @@
   SpmiLib|MSM8909Pkg/Drivers/SpmiDxe/SpmiLib.inf
   Pm8x41Lib|MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|MSM8909Pkg/Drivers/ClockDxe/ClockImplLib.inf
+  SmemLib|MSM8909Pkg/Driver/SmemDxe/SmemImplLib.inf
 
 [LibraryClasses.common.UEFI_APPLICATION]
   # SoC Drivers
@@ -136,6 +139,7 @@
   SpmiLib|MSM8909Pkg/Drivers/SpmiDxe/SpmiLib.inf
   Pm8x41Lib|MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|MSM8909Pkg/Drivers/ClockDxe/ClockImplLib.inf
+  SmemLib|MSM8909Pkg/Driver/SmemDxe/SmemImplLib.inf
 
 [LibraryClasses.common.UEFI_DRIVER]
   # SoC Drivers
@@ -143,6 +147,7 @@
   SpmiLib|MSM8909Pkg/Drivers/SpmiDxe/SpmiLib.inf
   Pm8x41Lib|MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|MSM8909Pkg/Drivers/ClockDxe/ClockImplLib.inf
+  SmemLib|MSM8909Pkg/Driver/SmemDxe/SmemImplLib.inf
 
 
 ################################################################################
@@ -238,6 +243,10 @@
   gEmbeddedTokenSpaceGuid.PcdAndroidFastbootUsbVendorId|0x18d1
   gEmbeddedTokenSpaceGuid.PcdAndroidFastbootUsbProductId|0xd00d
 
+  # SMEM
+  gQcomTokenSpaceGuid.PcdMsmSharedBase|0x06A00000
+  gQcomTokenSpaceGuid.PcdMsmSharedSize|0x00200000
+
   #
   # Make VariableRuntimeDxe work at emulated non-volatile variable mode.
   #
@@ -318,6 +327,7 @@
 #  MSM8909Pkg/Drivers/KeypadDxe/KeypadDxe.inf
   MSM8909Pkg/Drivers/ClockDxe/ClockDxe.inf
   MSM8909Pkg/Drivers/SdhciMMCHSDxe/SdhciMMCHS.inf
+  MSM8909Pkg/Driver/SmemDxe/SmemDxe.inf
 
   #
   # Virtual Keyboard
