@@ -327,7 +327,7 @@
 #  MSM8909Pkg/Drivers/KeypadDxe/KeypadDxe.inf
   MSM8909Pkg/Drivers/ClockDxe/ClockDxe.inf
   MSM8909Pkg/Drivers/SdhciMMCHSDxe/SdhciMMCHS.inf
-  MSM8909Pkg/Driver/SmemDxe/SmemDxe.inf
+  MSM8909Pkg/Drivers/SmemDxe/SmemDxe.inf
 
   #
   # Virtual Keyboard

@@ -146,7 +146,7 @@ READ_LOCK_STATUS   = TRUE
  #INF MSM8909Pkg/Drivers/KeypadDxe/KeypadDxe.inf
   INF MSM8909Pkg/Drivers/ClockDxe/ClockDxe.inf
   INF MSM8909Pkg/Drivers/SdhciMMCHSDxe/SdhciMMCHS.inf
-  INF MSM8909Pkg/Driver/SmemDxe/SmemDxe.inf
+  INF MSM8909Pkg/Drivers/SmemDxe/SmemDxe.inf
 
   #
   # USB Host Support
