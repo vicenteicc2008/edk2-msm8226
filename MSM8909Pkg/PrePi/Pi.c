@@ -55,7 +55,7 @@ STATIC VOID UartInit(VOID)
        (CHAR16 *)PcdGetPtr(PcdFirmwareVersionString), __TIME__, __DATE__));
 }
 
-VOID Main(IN VOID *StackBase, IN UINTN StackSize, IN UINT64 StartTimeStamp)
+VOID Main(IN VOID *StackBase, IN UINTN StackSize)
 {
 
   EFI_HOB_HANDOFF_INFO_TABLE *HobList;
@@ -153,5 +153,5 @@ VOID Main(IN VOID *StackBase, IN UINTN StackSize, IN UINT64 StartTimeStamp)
 VOID CEntryPoint(IN VOID *StackBase, IN UINTN StackSize)
 {
   UartInit();
-  Main(StackBase, StackSize, 0);
+  Main(StackBase, StackSize);
 }
