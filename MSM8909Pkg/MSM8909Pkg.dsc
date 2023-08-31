@@ -322,7 +322,7 @@
   MSM8909Pkg/Drivers/GpioTlmmInterruptDxe/GpioTlmmInterruptDxe.inf
   MSM8909Pkg/Drivers/SpmiDxe/SpmiDxe.inf
   MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Dxe.inf
-  MSM8909Pkg/Driver/ButtonsDxe/ButtonsDxe.inf
+  MSM8909Pkg/Drivers/ButtonsDxe/ButtonsDxe.inf
   MSM8909Pkg/Drivers/ClockDxe/ClockDxe.inf
   MSM8909Pkg/Drivers/SdhciMMCHSDxe/SdhciMMCHS.inf
   MSM8909Pkg/Drivers/SmemDxe/SmemDxe.inf
