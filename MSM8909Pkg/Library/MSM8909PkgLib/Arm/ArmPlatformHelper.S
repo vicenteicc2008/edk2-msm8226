@@ -14,6 +14,15 @@
 #include <AsmMacroIoLib.h>
 #include <Library/ArmLib.h>
 
+//Write to decon to enable framebuffer writing
+enableDecon:
+        mov     r0, 112
+        movk    r0, 0x320, lsl 16
+        mov     r1, 4737
+        str     r1, [r0]
+        nop
+        bx      lr
+
 ASM_FUNC(ArmPlatformPeiBootAction)
   bx    lr
 
