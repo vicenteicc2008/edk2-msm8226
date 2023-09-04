@@ -15,13 +15,15 @@
 #include <Library/ArmLib.h>
 
 //Write to decon to enable framebuffer writing
+.global enableDecon
 enableDecon:
-        mov     r0, 112
-        movk    r0, 0x320, lsl 16
-        mov     r1, 4737
-        str     r1, [r0]
-        nop
-        bx      lr
+    mov     r0, 112
+    movw    r0, 0x320
+    movt    r0, 0x320
+    mov     r1, 4737
+    str     r1, [r0]
+    nop
+    bx      lr
 
 ASM_FUNC(ArmPlatformPeiBootAction)
   bx    lr
