@@ -62,7 +62,7 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
 
 //------------- DDR Regions ------},
 {0x00010000, 0x00011000, "DBI Dump",         NoHob,  MMAP_IO, INITIALIZED, Conv,   NS_DEVICE},
-{0x0b300000, 0x0c2fffff, "HLOS 0",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
+{0x00100000, 0x00100000, "HLOS 0",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
 {0x00200000, 0x00100000, "UEFI FD",          AddMem, SYS_MEM, SYS_MEM_CAP, BsCode, WRITE_BACK},
 {0x00300000, 0x00040000, "MPPark Code",      AddMem, MEM_RES, UNCACHEABLE, RtCode, UNCACHED_UNBUFFERED},
 {0x00340000, 0x00040000, "Reser. Uncached1", AddMem, SYS_MEM, SYS_MEM_CAP, BsData, UNCACHED_UNBUFFERED},
@@ -76,14 +76,14 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
 {0x00C00000, 0x00040000, "UEFI Stack",       AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
 {0x00C40000, 0x00010000, "CPU Vectors",      AddMem, SYS_MEM, SYS_MEM_CAP, BsCode, WRITE_BACK},
 {0x00C50000, 0x000B0000, "Reser. Cached 0",  AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
-{0x0c400000, 0x0c9fffff, "HLOS 1",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
+{0x00D00000, 0x07300000, "HLOS 1",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
 {0x08000000, 0x07700000, "PIL_REGION",       AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, NS_DEVICE},
 {0x0F700000, 0x00300000, "TZ Apps",          AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, NS_DEVICE},
 {0x0FA00000, 0x00100000, "SMEM",             AddMem, MEM_RES, UNCACHEABLE, Reserv, UNCACHED_UNBUFFERED},
-{0x0f600000, 0x0f9fffff, "HLOS 2",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
+{0x0FB00000, 0x00100000, "HLOS 2",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
 {0x0FC00000, 0x00300000, "NonRelocateable 0",AddMem, SYS_MEM, SYS_MEM_CAP, Reserv, NS_DEVICE},
 {0x0FF00000, 0x00300000, "BGRT Logo",        AddMem, SYS_MEM, SYS_MEM_CAP, BsData, WRITE_BACK},
-{0x10600000, 0x5f2fffff, "HLOS 5",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
+{0x10200000, 0x4FE00000, "HLOS 5",           AddMem, SYS_MEM, SYS_MEM_CAP, Conv,   WRITE_BACK},
 //------------- Other Memory Regions ------
 {0xFE800000, 0x00004000, "IMEM Boot Base",   NoHob,  SYS_MEM, INITIALIZED, Conv,   NS_DEVICE},
 {0xFC42B000, 0x00001000, "IMEM Cookie Base", AddDev, MMAP_IO, INITIALIZED, Conv,   NS_DEVICE},
@@ -105,4 +105,3 @@ static ARM_MEMORY_REGION_DESCRIPTOR_EX gDeviceMemoryDescriptorEx[] = {
 };
 
 #endif
-
