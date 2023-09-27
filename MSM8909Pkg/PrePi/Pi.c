@@ -31,12 +31,6 @@ STATIC VOID UartInit(VOID)
 {
   SerialPortInitialize();
   
-  /* Clear screen at new FB address */ 
-  UINT8 *base = (UINT8 *)0x03200000ull;
-  for (UINTN i = 0; i < 0x00800000; i++) {
-    base[i] = 0;
-  }
-
 /*Change screen format to 32BPP BGRA for Windows*/
   MmioWrite32(0xFD901E00 + 0x30, 0x000236FF);
   MmioWrite32(0xFD901E00 + 0x34, 0x03020001);
