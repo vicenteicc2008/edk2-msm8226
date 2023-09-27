@@ -32,7 +32,7 @@ STATIC VOID UartInit(VOID)
   SerialPortInitialize();
   
   /* Clear screen at new FB address */ 
-  UINT8 *base = (UINT8 *)0x00400000ull;
+  UINT8 *base = (UINT8 *)0x03200000ull;
   for (UINTN i = 0; i < 0x00800000; i++) {
     base[i] = 0;
   }
