@@ -42,6 +42,7 @@ STATIC VOID UartInit(VOID)
   MmioWrite32(0xfd900618,0x00000001);
   MmioWrite32(0xfd900718,0x00000001); 
 
+  MmioWrite32(0x03200000,0xfa0000);
 
   DEBUG((EFI_D_INFO, "\nEDK2 UEFI on MSM8x26 (ARM)\n"));
   DEBUG(
