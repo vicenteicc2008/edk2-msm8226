@@ -115,12 +115,12 @@ FrameBufferBltConfigure (
   }
 
   switch (FrameBufferInfo->PixelFormat) {
-  case PixelRedGreenBlueReserved8BitPerColor:
-    BitMask = &mRgbPixelMasks;
-    break;
-
   case PixelBlueGreenRedReserved8BitPerColor:
     BitMask = &mBgrPixelMasks;
+    break;
+
+  case PixelRedGreenBlueReserved8BitPerColor:
+    BitMask = &mRgbPixelMasks;
     break;
 
   case PixelBitMask:
@@ -393,7 +393,7 @@ FrameBufferBltLibVideoToBltBuffer (
     Offset = Configure->BytesPerPixel * Offset;
     Source = Configure->FrameBuffer + Offset;
 
-    if (Configure->PixelFormat == PixelBlueGreenRedReserved8BitPerColor) {
+    if (Configure->PixelFormat == PixelRedGreenBlueReserved8BitPerColor) {
       Destination = (UINT8 *) BltBuffer + (DstY * Delta) + (DestinationX * sizeof (EFI_GRAPHICS_OUTPUT_BLT_PIXEL));
     } else {
       Destination = Configure->LineBuffer;
@@ -401,7 +401,7 @@ FrameBufferBltLibVideoToBltBuffer (
 
     CopyMem (Destination, Source, WidthInBytes);
 
-    if (Configure->PixelFormat != PixelBlueGreenRedReserved8BitPerColor) {
+    if (Configure->PixelFormat != PixelRedGreenBlueReserved8BitPerColor) {
       for (IndexX = 0; IndexX < Width; IndexX++) {
         Blt = (EFI_GRAPHICS_OUTPUT_BLT_PIXEL *)
           ((UINT8 *) BltBuffer + (DstY * Delta) +
@@ -496,7 +496,7 @@ FrameBufferBltLibBufferToVideo (
     Offset = Configure->BytesPerPixel * Offset;
     Destination = Configure->FrameBuffer + Offset;
 
-    if (Configure->PixelFormat == PixelBlueGreenRedReserved8BitPerColor) {
+    if (Configure->PixelFormat == PixelRedGreenBlueReserved8BitPerColor) {
       Source = (UINT8 *) BltBuffer + (SrcY * Delta);
     } else {
       for (IndexX = 0; IndexX < Width; IndexX++) {
