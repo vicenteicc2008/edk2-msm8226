@@ -269,13 +269,13 @@ SimpleFbDxeInitialize
     mDisplay.Mode->Info->HorizontalResolution = MipiFrameBufferWidth;
     mDisplay.Mode->Info->VerticalResolution = MipiFrameBufferHeight;
 
-    /* SimpleFB runs on a8r8g8b8 (VIDEO_BPP32) for arm Lumia devices */
+    /* SimpleFB runs on BGR for arm Lumia devices */
     UINT32 LineLength = MipiFrameBufferWidth * VNBYTES(VIDEO_BPP32);
     UINT32 FrameBufferSize = LineLength * MipiFrameBufferHeight;
     UINT32 FrameBufferAddress = MipiFrameBufferAddr;
 
     mDisplay.Mode->Info->PixelsPerScanLine = MipiFrameBufferWidth;
-    mDisplay.Mode->Info->PixelFormat = PixelRedGreenBlueReserved8BitPerColor;
+    mDisplay.Mode->Info->PixelFormat = PixelBlueGreenRedReserved8BitPerColor;
     mDisplay.Mode->SizeOfInfo = sizeof(EFI_GRAPHICS_OUTPUT_MODE_INFORMATION);
     mDisplay.Mode->FrameBufferBase = FrameBufferAddress;
     mDisplay.Mode->FrameBufferSize = FrameBufferSize;
