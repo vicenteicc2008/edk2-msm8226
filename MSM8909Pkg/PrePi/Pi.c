@@ -29,7 +29,12 @@ VOID EFIAPI ProcessLibraryConstructorList(VOID);
 
 STATIC VOID UartInit(VOID)
 {
-  SerialPortInitialize();
+  /* Clear screen at new FB address */ 
+  UINT8 *base = (UINT8 *)0x03200000ull;
+  for (UINTN i = 0; i < 0x00800000; i++) {
+    base[i] = 0;
+  }
+
   
 /*Change screen format to 32BPP BGRA for Windows*/
   MmioWrite32(0xFD901E00 + 0x30, 0x000236FF);
@@ -44,6 +49,7 @@ STATIC VOID UartInit(VOID)
 
   MmioWrite32(0x03200000,0xfa0000);
 
+  SerialPortInitialize();
   DEBUG((EFI_D_INFO, "\nEDK2 UEFI on MSM8x26 (ARM)\n"));
   DEBUG(
       (EFI_D_INFO, "Firmware version %s built %a %a\n\n",
