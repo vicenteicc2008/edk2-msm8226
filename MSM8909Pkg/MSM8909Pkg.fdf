@@ -108,7 +108,6 @@ READ_LOCK_STATUS   = TRUE
   # things from WP Lumia devices
   #
   INF MdeModulePkg/Universal/DebugPortDxe/DebugPortDxe.inf
-  INF MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
 
   #
   # Multiple Console IO support
