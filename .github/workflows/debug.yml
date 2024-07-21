@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "kmini3g" ]
+    branches: [ "wp" ]
   pull_request:
-    branches: [ "sdcard" ]
+    branches: [ "wp" ]
 
 jobs:
   build:
