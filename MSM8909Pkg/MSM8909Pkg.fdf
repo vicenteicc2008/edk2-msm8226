@@ -105,6 +105,11 @@ READ_LOCK_STATUS   = TRUE
   INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
 
   #
+  # things from WP Lumia devices
+  #
+  MdeModulePkg/Universal/DebugPortDxe/DebugPortDxe.inf
+
+  #
   # Multiple Console IO support
   #
   INF MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
