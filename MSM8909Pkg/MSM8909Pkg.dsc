@@ -301,6 +301,7 @@
   # things from WP Lumia devices
   #
   MdeModulePkg/Universal/DebugPortDxe/DebugPortDxe.inf
+  MdeModulePkg/Universal/SerialDxe/SerialDxe.inf
 
   MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
   MdeModulePkg/Universal/Console/ConSplitterDxe/ConSplitterDxe.inf
