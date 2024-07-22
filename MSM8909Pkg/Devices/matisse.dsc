@@ -17,6 +17,7 @@
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x60000000
   
   # Framebuffer (720x1280)
+  gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferAddress|0x00400000
   gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferWidth|1280
   gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferHeight|800
   gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|1280
