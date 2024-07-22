@@ -1,0 +1,22 @@
+name: matisse UEFI build
+
+on:
+  push:
+    branches: [ "wp" ]
+  pull_request:
+    branches: [ "wp" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: CI Build
+      run: chmod +x ci-build-matisse.sh && ./ci-build-matisse.sh
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Galaxy Tab 4
+        path: ./workspace/bootpayload.bin
