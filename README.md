@@ -38,4 +38,6 @@ SimpleFbDxe screen driver is from imbushuo's [Lumia950XLPkg](https://github.com/
 
 SmemDxe driver is from Dominduchami's [Lumia830Pkg](https://github.com/Dominduchami/Lumia830Pkg).
 
+SmdRpmDxe driver is also from Dominduchami's [Lumia830Pkg](https://github.com/Dominduchami/Lumia830Pkg).
+
 ButtonsDxe driver is from sonic011gamer's [Lumia650Pkg](https://github.com/sonic011gamer/Lumia650Pkg).
