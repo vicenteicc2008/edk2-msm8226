@@ -115,6 +115,7 @@
   MemoryAllocationLib|EmbeddedPkg/Library/PrePiMemoryAllocationLib/PrePiMemoryAllocationLib.inf
   PrePiHobListPointerLib|ArmPlatformPkg/Library/PrePiHobListPointerLib/PrePiHobListPointerLib.inf
   SmemLib|MSM8909Pkg/Drivers/SmemDxe/SmemImplLib.inf
+  RpmLib|MSM8909Pkg/Drivers/SmdRpmDxe/RpmLib.inf
 
   # SoC Drivers
   GpioTlmmLib|MSM8909Pkg/Drivers/GpioTlmmDxe/GpioTlmmImplLib.inf
@@ -131,6 +132,7 @@
   Pm8x41Lib|MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|MSM8909Pkg/Drivers/ClockDxe/ClockImplLib.inf
   SmemLib|MSM8909Pkg/Drivers/SmemDxe/SmemImplLib.inf
+  RpmLib|MSM8909Pkg/Drivers/SmdRpmDxe/RpmLib.inf
 
 [LibraryClasses.common.UEFI_APPLICATION]
   # SoC Drivers
@@ -139,6 +141,7 @@
   Pm8x41Lib|MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|MSM8909Pkg/Drivers/ClockDxe/ClockImplLib.inf
   SmemLib|MSM8909Pkg/Drivers/SmemDxe/SmemImplLib.inf
+  RpmLib|MSM8909Pkg/Drivers/SmdRpmDxe/RpmLib.inf
 
 [LibraryClasses.common.UEFI_DRIVER]
   # SoC Drivers
@@ -147,6 +150,7 @@
   Pm8x41Lib|MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Lib.inf
   ClockLib|MSM8909Pkg/Drivers/ClockDxe/ClockImplLib.inf
   SmemLib|MSM8909Pkg/Drivers/SmemDxe/SmemImplLib.inf
+  RpmLib|MSM8909Pkg/Drivers/SmdRpmDxe/RpmLib.inf
 
 
 ################################################################################
@@ -242,6 +246,10 @@
   gEmbeddedTokenSpaceGuid.PcdAndroidFastbootUsbVendorId|0x18d1
   gEmbeddedTokenSpaceGuid.PcdAndroidFastbootUsbProductId|0xd00d
 
+  # RPM
+  gQcomTokenSpaceGuid.PcdApcsAlias0IpcInterrupt|0xF9011000
+  gQcomTokenSpaceGuid.PcdSmdIrq|200
+
   # SMEM
   gQcomTokenSpaceGuid.PcdMsmSharedBase|0x0FA00000
   gQcomTokenSpaceGuid.PcdMsmSharedSize|0x00100000
@@ -332,6 +340,7 @@
   MSM8909Pkg/Drivers/ClockDxe/ClockDxe.inf
   MSM8909Pkg/Drivers/SdhciMMCHSDxe/SdhciMMCHS.inf
   MSM8909Pkg/Drivers/SmemDxe/SmemDxe.inf
+  MSM8909Pkg/Drivers/SmdRpmDxe/RpmDxe.inf
 
   #
   # Virtual Keyboard
