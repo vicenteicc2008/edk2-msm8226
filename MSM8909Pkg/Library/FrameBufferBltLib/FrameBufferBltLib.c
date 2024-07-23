@@ -115,12 +115,12 @@ FrameBufferBltConfigure (
   }
 
   switch (FrameBufferInfo->PixelFormat) {
-  case PixelBlueGreenRedReserved8BitPerColor:
-    BitMask = &mBgrPixelMasks;
-    break;
-
   case PixelRedGreenBlueReserved8BitPerColor:
     BitMask = &mRgbPixelMasks;
+    break;
+
+  case PixelBlueGreenRedReserved8BitPerColor:
+    BitMask = &mBgrPixelMasks;
     break;
 
   case PixelBitMask:
