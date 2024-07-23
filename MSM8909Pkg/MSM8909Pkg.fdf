@@ -200,18 +200,18 @@ READ_LOCK_STATUS   = TRUE
 
   # ACPI Tables
   FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
-     SECTION RAW = MSM8909Pkg/AcpiTables/CSRT.aml
-#    SECTION RAW = MSM8909Pkg/AcpiTables/DBG2.aml
-     SECTION RAW = MSM8909Pkg/AcpiTables/DSDT_SDCARD.aml
-     SECTION RAW = MSM8909Pkg/AcpiTables/facp.acp
-     SECTION RAW = MSM8909Pkg/AcpiTables/facs.acp
-     SECTION RAW = MSM8909Pkg/AcpiTables/FPDT.aml
-     SECTION RAW = MSM8909Pkg/AcpiTables/GTDT.aml
-     SECTION RAW = MSM8909Pkg/AcpiTables/MADT.aml
-     SECTION RAW = MSM8909Pkg/AcpiTables/SSDT.aml
-#    SECTION RAW = MSM8909Pkg/AcpiTables/TPM2.aml
-     SECTION UI = "AcpiTables"
-   }
+    SECTION RAW = MSM8909Pkg/AcpiTables/CSRT.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/DBG2.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/DSDT_SDCARD.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/FACP.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/FACS.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/FPDT.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/GTDT.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/MADT.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/SSDT.aml
+    SECTION RAW = MSM8909Pkg/AcpiTables/TPM2.aml
+    SECTION UI = "AcpiTables"
+  }
 
   #
   # UEFI applications
