@@ -143,6 +143,10 @@
   # Misc
   gQcomTokenSpaceGuid.PcdGicSpiStart|0|UINT64|0x00000200
 
+  # RPM
+  gQcomTokenSpaceGuid.PcdApcsAlias0IpcInterrupt|0|UINT64|0x000000b0
+  gQcomTokenSpaceGuid.PcdSmdIrq|0|UINT64|0x000000b1
+
   # SMEM
   gQcomTokenSpaceGuid.PcdMsmSharedBase|0x0|UINT64|0x00000001
   gQcomTokenSpaceGuid.PcdMsmSharedSize|0x0|UINT64|0x00000002
