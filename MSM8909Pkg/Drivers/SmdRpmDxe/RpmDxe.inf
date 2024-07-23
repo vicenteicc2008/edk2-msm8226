@@ -17,7 +17,7 @@
   MdePkg/MdePkg.dec
   ArmPkg/ArmPkg.dec
   EmbeddedPkg/EmbeddedPkg.dec
-  Lumia830Pkg/Lumia830Pkg.dec
+  MSM8909Pkg/MSM8909Pkg.dec
 
 [LibraryClasses]
   UefiDriverEntryPoint
