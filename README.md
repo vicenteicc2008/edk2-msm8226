@@ -1,10 +1,10 @@
 Attempt to create a minimal EDK2 for some MSM8226 Samsung devices
 
 ## Status
-Boots to EFI shell, eMMC is working, the memory map is from WP target, ACPI from Lumia 650.
+Boots to EFI shell, eMMC is working, the memory map is from WP target, ACPI from Lumia 830.
 
 ## Building
-Tested on Ubuntu 22.04.
+Tested on Ubuntu 24.04.
 
 First, clone EDK2.
 
@@ -28,11 +28,13 @@ Also see [EDK2 website](https://github.com/tianocore/tianocore.github.io/wiki/Us
 
 Then ./firstrun.sh
 
-Finally, ./build.sh, or ./saana.sh if you are planning to test on the 650 with LK.
+Finally, ./script/s3neo.sh, or ./s5mini-debug.sh if you are planning to test on the S5 Mini Duos with stock BL.
 
-Then fastboot boot uefi.img from lk2nd.
+Then make a image using AIK (Android Image Kitchen) and make a tar to flash with Odin.
 
 # Credits
+
+based on edk2-msm8226 by sonic011gamer [edk2-msm8226](https://github.com/sonic011gamer/edk2-msm8226).
 
 SimpleFbDxe screen driver is from imbushuo's [Lumia950XLPkg](https://github.com/WOA-Project/Lumia950XLPkg).
 

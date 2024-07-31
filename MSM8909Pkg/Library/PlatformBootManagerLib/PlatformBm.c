@@ -17,6 +17,7 @@
 
 **/
 
+#include <IndustryStandard/Pci22.h>
 #include <Library/BootLogoLib.h>
 #include <Library/CapsuleLib.h>
 #include <Library/DevicePathLib.h>
@@ -29,6 +30,10 @@
 #include <Protocol/EsrtManagement.h>
 #include <Protocol/GraphicsOutput.h>
 #include <Protocol/LoadedImage.h>
+#include <Protocol/PciIo.h>
+#include <Protocol/PciRootBridgeIo.h>
+#include <Protocol/PlatformBootManager.h>
+
 #include <Guid/EventGroup.h>
 #include <Guid/TtyTerm.h>
 #include <Configuration/BootDevices.h>
