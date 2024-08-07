@@ -234,8 +234,9 @@
   # SoC Drivers Misc
   gQcomTokenSpaceGuid.PcdGicSpiStart|32
 
+  gArmTokenSpaceGuid.PcdCpuVectorBaseAddress|0x00C40000
   gArmTokenSpaceGuid.PcdArmArchTimerIntrNum|18
-  gArmTokenSpaceGuid.PcdArmArchTimerVirtIntrNum|19
+  gArmTokenSpaceGuid.PcdArmArchTimerSecIntrNum|19
 
   # GUID of the UI app
   gEfiMdeModulePkgTokenSpaceGuid.PcdBootManagerMenuFile|{ 0x21, 0xaa, 0x2c, 0x46, 0x14, 0x76, 0x03, 0x45, 0x83, 0x6e, 0x8a, 0xb6, 0xf4, 0x66, 0x23, 0x31 }
@@ -343,7 +344,6 @@
   MSM8909Pkg/Drivers/GpioTlmmInterruptDxe/GpioTlmmInterruptDxe.inf
   MSM8909Pkg/Drivers/SpmiDxe/SpmiDxe.inf
   MSM8909Pkg/Drivers/Pm8x41Dxe/Pm8x41Dxe.inf
-  # MSM8909Pkg/Drivers/ButtonsDxe/ButtonsDxe.inf
   MSM8909Pkg/Drivers/ClockDxe/ClockDxe.inf
   MSM8909Pkg/Drivers/SdhciMMCHSDxe/SdhciMMCHS.inf
   MSM8909Pkg/Drivers/SmemDxe/SmemDxe.inf

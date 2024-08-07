@@ -280,11 +280,15 @@ SimpleFbDxeInitialize
     mDisplay.Mode->FrameBufferBase = FrameBufferAddress;
     mDisplay.Mode->FrameBufferSize = FrameBufferSize;
 
+if (FixedPcdGet32(PcdMipiFrameBufferPixelBpp) == 32) {
+    mDisplay.Mode->Info->PixelFormat                     = PixelBlueGreenRedReserved8BitPerColor;
+  } else {
+    mDisplay.Mode->Info->PixelFormat                     = PixelBitMask;
     mDisplay.Mode->Info->PixelInformation.RedMask        = 0x00FF0000; // Red
     mDisplay.Mode->Info->PixelInformation.GreenMask      = 0x0000FF00; // Green
     mDisplay.Mode->Info->PixelInformation.BlueMask       = 0x000000FF; // Blue
     mDisplay.Mode->Info->PixelInformation.ReservedMask   = 0;          // Reserved
-
+  }
   /* Create the FrameBufferBltLib configuration. */
     Status = FrameBufferBltConfigure (
         (VOID *) (UINTN) mDisplay.Mode->FrameBufferBase,

@@ -41,7 +41,7 @@
   gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferAddress
   gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferWidth
   gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferHeight
-
+  gMSM8909PkgTokenSpaceGuid.PcdMipiFrameBufferPixelBpp
 [Guids]
   gEfiMdeModulePkgTokenSpaceGuid
 

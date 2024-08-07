@@ -41,6 +41,11 @@ STATIC VOID UartInit(VOID)
   MmioWrite32(0xFD901E00 + 0x34, 0x03020001);
   MmioWrite32(0xFD901E00 + 0x24, 4 * PcdGet32(PcdMipiFrameBufferWidth));
   MmioWrite32(0xFD900600 + 0x18, (1 << (3)));
+  
+/* Move from old FB to the Windows Mobile platform one, so it fits with the UEFIplat */
+  MmioWrite32(0xFD901E14,0x00400000);
+  MmioWrite32(0xfd900618,0x00000001);
+  MmioWrite32(0xfd900718,0x00000001); 
 
   SerialPortInitialize();
   DEBUG((EFI_D_INFO, "\nEDK2 UEFI on MSM8x26 (ARM)\n"));
