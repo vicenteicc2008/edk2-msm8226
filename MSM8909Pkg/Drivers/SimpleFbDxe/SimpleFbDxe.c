@@ -269,26 +269,23 @@ SimpleFbDxeInitialize
     mDisplay.Mode->Info->HorizontalResolution = MipiFrameBufferWidth;
     mDisplay.Mode->Info->VerticalResolution = MipiFrameBufferHeight;
 
-    /* SimpleFB runs on BGR for arm Lumia devices */
+    /* SimpleFB runs on a8r8g8b8 (VIDEO_BPP32) for arm Lumia devices
+     * the above statement is false, it is bgra8888 as windows won't boot without it
+     */
     UINT32 LineLength = MipiFrameBufferWidth * VNBYTES(VIDEO_BPP32);
     UINT32 FrameBufferSize = LineLength * MipiFrameBufferHeight;
     UINT32 FrameBufferAddress = MipiFrameBufferAddr;
 
     mDisplay.Mode->Info->PixelsPerScanLine = MipiFrameBufferWidth;
-    mDisplay.Mode->Info->PixelFormat = PixelBitMask;
-    mDisplay.Mode->SizeOfInfo = sizeof(EFI_GRAPHICS_OUTPUT_MODE_INFORMATION);
-    mDisplay.Mode->FrameBufferBase = FrameBufferAddress;
-    mDisplay.Mode->FrameBufferSize = FrameBufferSize;
-
-if (FixedPcdGet32(PcdMipiFrameBufferPixelBpp) == 32) {
-    mDisplay.Mode->Info->PixelFormat                     = PixelBlueGreenRedReserved8BitPerColor;
-  } else {
     mDisplay.Mode->Info->PixelFormat                     = PixelBitMask;
     mDisplay.Mode->Info->PixelInformation.RedMask        = 0x00FF0000; // Red
     mDisplay.Mode->Info->PixelInformation.GreenMask      = 0x0000FF00; // Green
     mDisplay.Mode->Info->PixelInformation.BlueMask       = 0x000000FF; // Blue
     mDisplay.Mode->Info->PixelInformation.ReservedMask   = 0;          // Reserved
-  }
+    mDisplay.Mode->SizeOfInfo = sizeof(EFI_GRAPHICS_OUTPUT_MODE_INFORMATION);
+    mDisplay.Mode->FrameBufferBase = FrameBufferAddress;
+    mDisplay.Mode->FrameBufferSize = FrameBufferSize;
+    
   /* Create the FrameBufferBltLib configuration. */
     Status = FrameBufferBltConfigure (
         (VOID *) (UINTN) mDisplay.Mode->FrameBufferBase,

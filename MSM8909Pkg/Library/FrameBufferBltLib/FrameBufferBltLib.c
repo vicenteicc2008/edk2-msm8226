@@ -30,11 +30,11 @@ struct FRAME_BUFFER_CONFIGURE {
   UINT8                           LineBuffer[0];
 };
 
-CONST EFI_PIXEL_BITMASK  mRgbPixelMasks = {
+CONST EFI_PIXEL_BITMASK mRgbPixelMasks = {
   0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000
 };
 
-CONST EFI_PIXEL_BITMASK  mBgrPixelMasks = {
+CONST EFI_PIXEL_BITMASK mBgrPixelMasks = {
   0x00ff0000, 0x0000ff00, 0x000000ff, 0xff000000
 };
 
@@ -115,12 +115,12 @@ FrameBufferBltConfigure (
   }
 
   switch (FrameBufferInfo->PixelFormat) {
-  case PixelBlueGreenRedReserved8BitPerColor:
-    BitMask = &mBgrPixelMasks;
-    break;
-
   case PixelRedGreenBlueReserved8BitPerColor:
     BitMask = &mRgbPixelMasks;
+    break;
+
+  case PixelBlueGreenRedReserved8BitPerColor:
+    BitMask = &mBgrPixelMasks;
     break;
 
   case PixelBitMask:
@@ -156,8 +156,7 @@ FrameBufferBltConfigure (
   CopyMem (&Configure->PixelMasks, BitMask,  sizeof (*BitMask));
   CopyMem (Configure->PixelShl,    PixelShl, sizeof (PixelShl));
   CopyMem (Configure->PixelShr,    PixelShr, sizeof (PixelShr));
-
-   Configure->BytesPerPixel     = BytesPerPixel;
+  Configure->BytesPerPixel     = BytesPerPixel;
 
   Configure->PixelFormat       = FrameBufferInfo->PixelFormat;
   Configure->FrameBuffer       = (UINT8*) FrameBuffer;

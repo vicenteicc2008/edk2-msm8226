@@ -184,7 +184,7 @@
   #
   # ARM General Interrupt Controller
   #
-  gEmbeddedTokenSpaceGuid.PcdInterruptBaseAddress|0xF9000000
+  gEmbeddedTokenSpaceGuid.PcdInterruptBaseAddress|0xf9000000
   gArmTokenSpaceGuid.PcdGicDistributorBase|0xf9000000
   gArmTokenSpaceGuid.PcdGicInterruptInterfaceBase|0xf9002000
 
