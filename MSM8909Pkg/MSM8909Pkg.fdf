@@ -194,7 +194,7 @@ READ_LOCK_STATUS   = TRUE
   #
   # SMBIOS Support
   #
-  INF MSM8909Pkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
+  INF MSM8909Pkg/Drivers/SmBiosTableDxe/SmBiosTableDxe.inf
   INF MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
 
   # ACPI Tables

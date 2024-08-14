@@ -399,7 +399,7 @@
   #
   # SMBIOS Support
   #
-  MSM8909Pkg/Drivers/SmbiosPlatformDxe/SmbiosPlatformDxe.inf
+  MSM8909Pkg/Drivers/SmBiosTableDxe/SmBiosTableDxe.inf
   MdeModulePkg/Universal/SmbiosDxe/SmbiosDxe.inf
 
   #
